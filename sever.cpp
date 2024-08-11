@@ -48,7 +48,7 @@ bool checkCode(int c)
 
 float calcAns(int c, float num1, float num2)
 {
-	float ans = -1.11;
+	float ans;
 	switch (c)
 	{
 		case addCode:
@@ -60,12 +60,16 @@ float calcAns(int c, float num1, float num2)
 			cout << "Pre Answer is:\t" << (ans) << "\n";
 			break;
 		case divCode:
-			ans == (num1 / num2);
+			cout << "Division" << "\n";
+			cout << "Answer without ans var:\t" << (ans = num1 / num2) << "\n";
 			cout << "Pre Answer is:\t" << (ans)  << "\n";
 			break;
 		case multCode:
 			ans = (num1 * num2);
 			cout << "Pre Answer is:\t" << (ans) << "\n";
+			break;
+		default:
+			ans = -1.112;
 			break;
 	}
 
@@ -111,7 +115,7 @@ int main()
 			float ans = calcAns(code, num1, num2);
 			cout << "The answer is: " << ans << "\n";
 			stream >> ansRequest;
-			cout << "Ans Request: \t" << ansRequest << "\n";
+			//cout << "Ans Request: \t" << ansRequest << "\n";
 			stream << ans << endl;
 
 			
