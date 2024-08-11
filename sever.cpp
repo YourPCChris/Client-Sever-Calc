@@ -46,35 +46,31 @@ bool checkCode(int c)
 	return false;
 }
 
-int takeNums(int c)
+float calcAns(int c, float num1, float num2)
 {
-	int num1, num2;
-	tcp::iostream stream;
-	cout << "Taking numbers" << "\n";
-
-	stream << "one" << endl;
-	stream >> num1;
-	stream << "two" << endl;
-	stream >> num2;
-
+	float ans = -1.11;
 	switch (c)
 	{
 		case addCode:
-			return (num1 + num2);
+			ans = (num1 + num2);
+			cout << "Pre Answer is:\t" << (ans) << "\n";
 			break;
 		case subCode:
-			return (num1 - num2);
+			ans = (num1 - num2);
+			cout << "Pre Answer is:\t" << (ans) << "\n";
 			break;
 		case divCode:
-			return (num1 / num2);
+			ans == (num1 / num2);
+			cout << "Pre Answer is:\t" << (ans)  << "\n";
 			break;
 		case multCode:
-			return (num1 * num2);
+			ans = (num1 * num2);
+			cout << "Pre Answer is:\t" << (ans) << "\n";
 			break;
 	}
 
-	return -1;
-}	
+	return ans;
+}
 
 
 int main()
@@ -102,8 +98,20 @@ int main()
 				cout << "Code Accepted" << "\n";
 			}else cout << "Invalid Code" << "\n";
 
-			//takeNums(code);
+			float num1, num2;
+			string one, two;
 
+			stream << "one" << endl;
+			stream >> num1;
+			cout << num1 << "\n";
+			stream << "two" << endl;
+			stream >> num2;
+			cout << num2 << "\n";
+
+			int ans = calcAns(code, num1, num2);
+			cout << "The answer is: " << ans << "\n";
+
+			
 			if (!stream) break;
 		}			
 	}

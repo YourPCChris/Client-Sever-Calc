@@ -45,6 +45,26 @@ int takeOp(int op)
 	}
 }
 
+int takeNums()
+{
+        tcp::iostream stream;
+
+	string one, two;
+	float num1, num2;
+
+	stream >> one;
+	cout << "Hello" << "\n";
+	cout << one << "\n";
+	if (one == "one"){
+		cout << "Enter First Number: " << "\n";
+		cin >> num1;
+		stream << num1 << endl;
+	}
+
+	return 0;
+}
+	
+
 
 int main(int argc, char* argv[])
 {
@@ -67,6 +87,18 @@ int main(int argc, char* argv[])
 			cin >> op;
 			code = takeOp(op);
 			stream << code  << endl;
+
+			float num1, num2;
+			string one, two;
+			stream >> one;
+			cout << one << " first num \n";
+			cin >> num1;
+			stream << num1 << endl;
+			stream >> two;
+			cout << two <<" Second num \n";
+			cin >> num2;
+			stream << num2 << endl;
+
 			
 			if(!stream) break;
 		}
