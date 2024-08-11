@@ -102,7 +102,7 @@ int main()
 				cout << "Code Accepted" << "\n";
 			}else cout << "Invalid Code" << "\n";
 
-			takeNums(code);
+			//takeNums(code);
 
 			if (!stream) break;
 		}			

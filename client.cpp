@@ -67,17 +67,6 @@ int main(int argc, char* argv[])
 			cin >> op;
 			code = takeOp(op);
 			stream << code  << endl;
-			stream >> one;
-			if (one == "one"){
-				cout << "Enter First number: " << "\n";
-				cin >> one;
-				stream << one << endl;
-			}
-			if (two == "two"){
-				cout << "Enter Second number: " << "\n";
-				cin >> two;
-				stream << two << endl;
-			}
 			
 			if(!stream) break;
 		}
