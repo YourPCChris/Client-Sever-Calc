@@ -103,7 +103,7 @@ int main()
 			}else cout << "Invalid Code" << "\n";
 
 			float num1, num2;
-			string ansRequest;
+			string ansRequest, iterationRequest;
 
 			stream << "one" << endl;
 			stream >> num1;
@@ -115,8 +115,12 @@ int main()
 			float ans = calcAns(code, num1, num2);
 			cout << "The answer is: " << ans << "\n";
 			stream >> ansRequest;
+
+			if (ansRequest == "ans"){
+				stream << ans << endl;
+			}
+		
 			//cout << "Ans Request: \t" << ansRequest << "\n";
-			stream << ans << endl;
 
 			
 			if (!stream) break;

@@ -69,8 +69,7 @@ int takeNums()
 int main(int argc, char* argv[])
 {
 	int code = 0;
-	string one;
-	string two;
+	string firstNumRequest, secNumRequest, iterationRequest;
 	char op;
 
 	try
@@ -89,19 +88,29 @@ int main(int argc, char* argv[])
 			stream << code  << endl;
 
 			float num1, num2, ans;
-			string one, two;
-			stream >> one;
-			cout << one << " first num \n";
-			cin >> num1;
-			stream << num1 << endl;
-			stream >> two;
-			cout << two <<" Second num \n";
-			cin >> num2;
-			stream << num2 << endl;
-			stream << "ans" << endl;
-			stream >> ans;
+			int goAgain;
+			stream >> firstNumRequest;
+
+			if (firstNumRequest == "one"){
+				cout << firstNumRequest << " first num \n";
+				cin >> num1;
+				stream << num1 << endl;
+			}
+			stream >> secNumRequest;
+			if (secNumRequest == "two"){
+				cout << secNumRequest <<" Second num \n";
+				cin >> num2;
+				stream << num2 << endl;
+				stream << "ans" << endl;
+				stream >> ans;
+			}
 			cout << "Sever says:\t\t" << ans << "\n";
 
+			cout << "Do you want to do more caluclations?(0/1)" <<"\n";
+			cin >> goAgain;
+
+			if (goAgain != 0) exit(0);
+			
 			
 			if(!stream) break;
 		}
