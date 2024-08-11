@@ -88,7 +88,7 @@ int main(int argc, char* argv[])
 			code = takeOp(op);
 			stream << code  << endl;
 
-			float num1, num2;
+			float num1, num2, ans;
 			string one, two;
 			stream >> one;
 			cout << one << " first num \n";
@@ -98,6 +98,9 @@ int main(int argc, char* argv[])
 			cout << two <<" Second num \n";
 			cin >> num2;
 			stream << num2 << endl;
+			stream << "ans" << endl;
+			stream >> ans;
+			cout << "Sever says:\t\t" << ans << "\n";
 
 			
 			if(!stream) break;

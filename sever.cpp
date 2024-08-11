@@ -75,7 +75,7 @@ float calcAns(int c, float num1, float num2)
 
 int main()
 {
-	char again;
+	bool goAgain;
 
 	boost::asio::io_context io_context;
 	tcp::endpoint endpoint(tcp::v4(), 5678); //setting port
@@ -99,7 +99,7 @@ int main()
 			}else cout << "Invalid Code" << "\n";
 
 			float num1, num2;
-			string one, two;
+			string ansRequest;
 
 			stream << "one" << endl;
 			stream >> num1;
@@ -108,8 +108,11 @@ int main()
 			stream >> num2;
 			cout << num2 << "\n";
 
-			int ans = calcAns(code, num1, num2);
+			float ans = calcAns(code, num1, num2);
 			cout << "The answer is: " << ans << "\n";
+			stream >> ansRequest;
+			cout << "Ans Request: \t" << ansRequest << "\n";
+			stream << ans << endl;
 
 			
 			if (!stream) break;
